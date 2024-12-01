@@ -1,10 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "paths": {
-    "@assets/*": [
-      "src/assets/*"
-    ]
-  },
   "include": [
     ".astro/types.d.ts",
     "**/*"
