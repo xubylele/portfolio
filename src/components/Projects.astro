@@ -1,8 +1,44 @@
+---
+import Project from './Project.astro';
+
+const projects = [
+  {
+    title: 'Reports Server - CMT Salud',
+    description:
+      'Es un servidor rest api que permite generar reportes dinámicos en formato pdf. Se puede personalizar el contenido del reporte a través del interprete Jinja2, permitiendo crear nuevos reportes on demand.',
+    technologies: [
+      { name: 'Python', color: '#ffde57', textColor: 'black' },
+      { name: 'Flask', color: '#f6ea5d', textColor: 'black' },
+      { name: 'Jinja2', color: '#f6ea5d', textColor: 'black' },
+      { name: 'HTML', color: '#e34c26', textColor: 'white' },
+      { name: 'CSS', color: '#264de4', textColor: 'white' },
+    ],
+  },
+  {
+    title: 'SAGE - CMT Salud',
+    description:
+      'Sistema de gestión interno de la empresa CMT Salud. Permite gestionar las reservas de los pacientes, la atención de los pacientes, la facturación y la gestión de los usuarios, entre otros.',
+    technologies: [
+      { name: 'Javascript', color: '#f0db4f', textColor: 'black' },
+      { name: 'Typescript', color: '#007acc', textColor: 'white' },
+      { name: 'Node.js', color: '#68a063', textColor: 'white' },
+      { name: 'ExpressJS', color: '#000000', textColor: 'white' },
+      { name: 'React', color: '#61dafb', textColor: 'black' },
+      { name: 'Ant Design', color: '#0170fe', textColor: 'white' },
+      { name: 'PostgreSQL', color: '#336791', textColor: 'white' },
+    ],
+  },
+];
+---
+
 <section class='text-white p-4'>
   <section class='mb-8'>
     <div class='flex items-center gap-3 md:text-3xl'>
       <i class='fa-solid fa-code w-8 h-8 md:w-8 md:h-8'></i>
       <h1 class='font-bold'>Proyectos</h1>
     </div>
+  </section>
+  <section class='mb-8 xl:w-3/5 lg:w-4/5 md:w-5/6'>
+    {projects.map((project) => <Project project={project} />)}
   </section>
 </section>
