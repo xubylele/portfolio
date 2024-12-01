@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from '../components/Welcome.astro';
+import Experiences from '../components/Experiences.astro';
+import Projects from '../components/Projects.astro';
+import AboutMe from '../components/AboutMe.astro';
+import '@fortawesome/fontawesome-free/css/solid.min.css';
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import '@fortawesome/fontawesome-free/css/brands.min.css';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title='Mi Portfolio'>
+  <div
+    class='bg-gradient-to-b from-[#4b1e3d] to-[#0e050b] text-white p-4 lg:px-40 md:px-20 sm:px-10 xs:px-4'
+  >
+    <Welcome />
+    <Experiences />
+    <Projects />
+    <AboutMe />
+  </div>
 </Layout>
