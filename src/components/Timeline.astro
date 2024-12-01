@@ -1,0 +1,33 @@
+---
+interface TimelineItem {
+  title: string;
+  company: string;
+  date: string;
+  current?: boolean;
+}
+
+interface Props {
+  items: TimelineItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class='relative'>
+  <div class='absolute left-2 w-0.5 h-full bg-gray-700'></div>
+
+  <div class='relative ml-8'>
+    {
+      items.map((item) => (
+        <div class='mb-16'>
+          <span class='absolute -left-6 top-[10px] h-4 w-4 rounded-full bg-[#FFF9B0]' />
+          <h3 class='text-[#FFF9B0] text-xl font-semibold'>{item.title}</h3>
+          <h4 class='text-xl text-white'>{item.company}</h4>
+          <span class='text-gray-400'>
+            {item.current ? 'Actualmente...' : item.date}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
