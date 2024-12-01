@@ -36,7 +36,7 @@ const { project } = Astro.props;
         )}
         <div class='flex-1'>
           <h2 class='text-xl font-semibold mb-4'>{project.title}</h2>
-          <p class='text-gray-400 mb-4'>{project.description}</p>
+          <p class='text-gray-400 mb-4 break-words'>{project.description}</p>
           {project.url && (
             <a
               href={project.url}
@@ -47,9 +47,9 @@ const { project } = Astro.props;
               Ver proyecto
             </a>
           )}
-          <div class='flex items center gap-2'>
+          <div class='flex flex-wrap items-center gap-2'>
             <p class='text-gray-400'>Tecnologías:</p>
-            <div class='flex gap-2'>
+            <div class='flex flex-wrap gap-2'>
               {project.technologies.map((technology) => (
                 <span
                   style={`background-color: ${technology.color}; color: ${technology.textColor};`}
