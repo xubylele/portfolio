@@ -1,0 +1,125 @@
+---
+const menuItems = [
+  {
+    label: 'Experiencia',
+    href: '#experiencias',
+  },
+  {
+    label: 'Proyectos',
+    href: '#proyectos',
+  },
+  {
+    label: 'Sobre Mí',
+    href: '#about',
+  },
+];
+---
+
+<nav class='fixed top-0 left-0 right-0 z-50 bg-[#4b1e3d]/30 backdrop-blur-sm'>
+  <div class='max-w-screen-xl mx-auto px-4'>
+    <ul class='flex justify-center items-center h-8 gap-8'>
+      {
+        menuItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class='text-white/80 hover:text-white transition-colors text-sm font-medium hover:text-[#f6ea5d] nav-link'
+              data-section={item.href.substring(1)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const activateNavLink = (id: string) => {
+    navLinks.forEach((link) => {
+      const section = link.getAttribute('data-section');
+      if (section === id) {
+        link.classList.add('active', 'text-[#f6ea5d]');
+        link.classList.remove('text-white/80');
+      } else {
+        link.classList.remove('active', 'text-[#f6ea5d]');
+        link.classList.add('text-white/80');
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activateNavLink(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: '-50% 0px',
+      threshold: 0,
+    },
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (this: HTMLAnchorElement, e) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      if (href) {
+        document.querySelector(href)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        history.pushState(null, '', href);
+      }
+    });
+  });
+
+  window.addEventListener('load', () => {
+    const hash = window.location.hash.substring(1) || 'welcome';
+    activateNavLink(hash);
+  });
+</script>
+
+<style>
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f6ea5d;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:not(.active)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f6ea5d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+</style>

@@ -4,6 +4,7 @@ import Welcome from '../components/sections/Welcome.astro';
 import Experiences from '../components/sections/Experiences.astro';
 import Projects from '../components/sections/Projects.astro';
 import AboutMe from '../components/sections/AboutMe.astro';
+import Navbar from '../components/ui/Navbar.astro';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/brands.min.css';
@@ -13,9 +14,20 @@ import '@fortawesome/fontawesome-free/css/brands.min.css';
   <div
     class='min-h-screen bg-gradient-to-b from-[#4b1e3d] to-[#0e050b] text-white p-4 lg:px-40 md:px-20 sm:px-10 xs:px-4'
   >
-    <Welcome />
-    <Experiences />
-    <Projects />
-    <AboutMe />
+    <Navbar />
+    <div class='pt-16'>
+      <section>
+        <Welcome />
+      </section>
+      <section id='experiencias'>
+        <Experiences />
+      </section>
+      <section id='proyectos'>
+        <Projects />
+      </section>
+      <section id='about'>
+        <AboutMe />
+      </section>
+    </div>
   </div>
 </Layout>
