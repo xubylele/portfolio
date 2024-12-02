@@ -1,6 +1,7 @@
 ---
 interface TimelineItem {
   title: string;
+  description: string;
   company: string;
   date: string;
   current?: boolean;
@@ -13,13 +14,13 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class='relative'>
+<div class='relative flex'>
   <div class='absolute left-3 w-0.5 h-full bg-[#443b40] top-0'></div>
 
   <div class='relative ml-8'>
     {
       items.map((item) => (
-        <div class='mb-16 relative'>
+        <div class='mb-12 relative'>
           <span class='absolute -left-7 top-[8px] h-4 w-4 rounded-full bg-[#FFF9B0] shadow-lg' />
           <div class='ml-8'>
             <h3 class='text-[#FFF9B0] text-xl font-semibold'>{item.title}</h3>
@@ -28,6 +29,7 @@ const { items } = Astro.props;
               {item.current ? 'Actualmente...' : item.date}
             </span>
           </div>
+          <p class='text-white mt-4 ml-8'>{item.description}</p>
         </div>
       ))
     }
