@@ -13,6 +13,7 @@ const projects = [
       { name: 'HTML', color: '#e34c26', textColor: 'white' },
       { name: 'CSS', color: '#264de4', textColor: 'white' },
     ],
+    image: '/assets/projects/reports-server.png',
   },
   {
     title: 'SAGE - CMT Salud',
@@ -27,18 +28,30 @@ const projects = [
       { name: 'Ant Design', color: '#0170fe', textColor: 'white' },
       { name: 'PostgreSQL', color: '#336791', textColor: 'white' },
     ],
+    image: '/assets/projects/sage.png',
   },
   {
-    title: 'Extensiones de VSCode',
+    title: 'Jinja2 HTML Enhancer para VSCode',
     description:
-      'He creado varias extensiones para Visual Studio Code, las cuales han sido publicadas en el marketplace de VSCode. Estas son Jinja2 HTML Enhancer y Base64 converter.',
+      'Extensión para Visual Studio Code que permite mejorar la experiencia de desarrollo de plantillas HTML con Jinja2. Agrega soporte para resaltado de sintaxis.',
     url: 'https://github.com/xubylele/jinja2-html-enhancer',
     technologies: [
-      { name: 'Typescript', color: '#007acc', textColor: 'white' },
       { name: 'VSCode API', color: '#007acc', textColor: 'white' },
+    ],
+    image: '/assets/projects/jinja2.png',
+  },
+  {
+    title: 'Base64 converter para VSCode',
+    description:
+      'Extensión para Visual Studio Code que permite convertir texto a base64 y viceversa.',
+    url: 'https://github.com/xubylele/base64-converter',
+    technologies: [
+      { name: 'VSCode API', color: '#007acc', textColor: 'white' },
+      { name: 'Javascript', color: '#f0db4f', textColor: 'black' },
       { name: 'HTML', color: '#e34c26', textColor: 'white' },
       { name: 'CSS', color: '#264de4', textColor: 'white' },
     ],
+    image: '/assets/projects/base64.png',
   },
 ];
 ---
@@ -50,7 +63,7 @@ const projects = [
       <h1 class='font-bold'>Proyectos</h1>
     </div>
   </section>
-  <section class='mb-8 xl:w-3/5 lg:w-4/5 md:w-5/6'>
+  <section class='mb-8'>
     {projects.map((project) => <Project project={project} />)}
   </section>
 </section>
