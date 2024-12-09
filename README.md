@@ -15,7 +15,7 @@ Ver mi [LinkedIn](https://www.linkedin.com/in/xubylele/) para más detalles sobr
 
 ## 📫 Contacto
 
-- Email: [contacto.dev@xuby.cl](mailto:contacto.dev@xuby.cl)
+- Email: [diazxavier27@gmail.com](mailto:diazxavier27@gmail.com)
 - LinkedIn: [Xavier Díaz](https://www.linkedin.com/in/xubylele/)
 - Portfolio: [dev.xuby.cl](https://dev.xuby.cl/)
 
