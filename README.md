@@ -39,9 +39,9 @@ Sistema de gestión interno para CMT Salud. Gestiona reservas de pacientes, aten
 
 [Ver en GitHub](https://github.com/xubylele/jinja2-html-enhancer)
 
-Mejora el desarrollo de plantillas HTML con Jinja2 añadiendo resaltado de sintaxis.
+Mejora el desarrollo de plantillas HTML con Jinja2 añadiendo resaltado de sintaxis, y la validación de variables delcaradas.
 
-**Tecnologías:** VSCode API
+**Tecnologías:** VSCode API, JavaScript, HTML, CSS
 
 ### Base64 Converter
 
