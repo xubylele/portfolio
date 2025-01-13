@@ -15,7 +15,7 @@ const { items } = Astro.props;
 ---
 
 <div class='relative flex'>
-  <div class='absolute left-3 w-0.5 h-full bg-[#443b40] top-0'></div>
+  <div class='absolute left-3 w-auto h-full bg-[#443b40] top-0'></div>
 
   <div class='relative ml-8'>
     {
@@ -29,7 +29,9 @@ const { items } = Astro.props;
               {item.current ? 'Actualmente...' : item.date}
             </span>
           </div>
-          <p class='text-white mt-4 ml-8'>{item.description}</p>
+          <article class='prose prose-base text-white text-md md:text-lg ml-8 mt-4'>
+            <p class='leading-relaxed'>{item.description}</p>
+          </article>
         </div>
       ))
     }
