@@ -37,7 +37,7 @@ const { items } = Astro.props;
           <article class='prose prose-base text-white text-md md:text-lg ml-8 mt-4'>
             <p class='leading-relaxed'>{item.description}</p>
           </article>
-          <div class='mt-4 ml-8 flex flex-wrap gap-2'>
+          <div class='prose prose-base mt-6 ml-8 flex flex-wrap gap-2'>
             {item.technologies?.map((tech) => (
               <span
                 class='inline-flex items-center justify-center px-3 py-1 rounded-full text-sm font-medium'
