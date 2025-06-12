@@ -3,26 +3,79 @@ import Timeline from '../ui/Timeline.astro';
 
 const experiences = [
   {
-    title: 'Fullstack Developer',
-    description:
-      'Desarrollado software in house para Centro Médico del Trabajador, Mejorando la eficiencia de los procesos internos, la atención a los pacientes y la entrega de información a los clientes de la empresa. Implementación de soluciones de software para la creación de reportajes dinámicos en formato PDF entre otros.',
-    company: 'CMT Salud',
-    date: '2023',
-    current: true,
-  },
-  {
-    title: 'Ingeniero de desarrollo backend',
-    description:
-      'Desarrollo de aplicaciones y servicios backend en integración a dispositivos OIT. Implementación soluciones únicas para diversos clientes de industrias como la minería, retail, entre otros. Implementación de integraciones continuas y despliegue de funciones en la nube.',
-    company: 'Wisely',
-    date: 'Marzo 2022',
-  },
-  {
     title: 'Desarrollador de integración ERP',
     description:
       'Desarrollo de integraciones entre sistemas ERP y aplicaciones de terceros. Migración de datos entre sistemas y desarrollo de aplicaciones de gestión de datos.',
     company: 'Universidad Santa María',
     date: 'Septiembre 2021',
+    technologies: [
+      { name: 'JavaScript', color: '#f0db4f', textColor: 'black' },
+      { name: 'Node.js', color: '#68a063', textColor: 'white' },
+      { name: 'Express.js', color: '#000000', textColor: 'white' },
+      { name: 'Oracle Database', color: '#f80000', textColor: 'white' },
+      { name: 'Docker', color: '#2496ed', textColor: 'white' },
+      { name: 'Git', color: '#f05032', textColor: 'white' },
+      { name: 'GitHub', color: '#181717', textColor: 'white' },
+    ],
+  },
+  {
+    title: 'Ingeniero de desarrollo backend',
+    description:
+      'Desarrollo de aplicaciones y servicios backend con integración a dispositivos IoT. Implementación de soluciones personalizadas para industrias como minería y retail. Configuración de integraciones continuas y despliegue de funciones en la nube.',
+    company: 'Wisely',
+    date: 'Marzo 2022',
+    technologies: [
+      { name: 'MongoDB', color: '#47a248', textColor: 'white' },
+      { name: 'Express.js', color: '#000000', textColor: 'white' },
+      { name: 'Node.js', color: '#68a063', textColor: 'white' },
+      { name: 'Azure', color: '#0089d6', textColor: 'white' },
+      { name: 'Docker', color: '#2496ed', textColor: 'white' },
+      { name: 'Git', color: '#f05032', textColor: 'white' },
+      { name: 'GitHub', color: '#181717', textColor: 'white' },
+      { name: 'IoT', color: '#38bdf8', textColor: 'black' }, // reemplazo el amarillo por el azul de Tailwind para más contraste
+    ],
+  },
+  {
+    title: 'Fullstack Developer',
+    description:
+      'Desarrollo de software in house para Centro Médico del Trabajador. Mejorando la eficiencia de los procesos internos, atención de pacientes y generación de reportes dinámicos en formato PDF, entre otras soluciones.',
+    company: 'CMT Salud',
+    date: 'Marzo 2023',
+    technologies: [
+      { name: 'Python', color: '#306998', textColor: 'white' },
+      { name: 'Flask', color: '#000000', textColor: 'white' },
+      { name: 'Jinja2', color: '#f0db4f', textColor: 'black' },
+      { name: 'PostgreSQL', color: '#336791', textColor: 'white' },
+      { name: 'Docker', color: '#2496ed', textColor: 'white' },
+      { name: 'Git', color: '#f05032', textColor: 'white' },
+      { name: 'GitHub', color: '#181717', textColor: 'white' },
+      { name: 'JavaScript', color: '#f0db4f', textColor: 'black' },
+      { name: 'Typescript', color: '#007acc', textColor: 'white' },
+      { name: 'Node.js', color: '#68a063', textColor: 'white' },
+      { name: 'React', color: '#61dafb', textColor: 'black' },
+      { name: 'Ant Design', color: '#0170fe', textColor: 'white' },
+      { name: 'AWS', color: '#232f3e', textColor: 'white' },
+    ],
+  },
+  {
+    title: 'Ingeniero Desarrollador',
+    description:
+      'Desarrollo de software in house para la empresa imed. Implementación de soluciones para optimizar la interacción de los clientes con el sistema de gestión, mejorando la eficiencia de procesos internos tanto para clientes nacionales como internacionales.',
+    company: 'imed',
+    date: 'Enero 2025',
+    current: true,
+    technologies: [
+      { name: 'JavaScript', color: '#f0db4f', textColor: 'black' },
+      { name: 'Typescript', color: '#007acc', textColor: 'white' },
+      { name: 'Node.js', color: '#68a063', textColor: 'white' },
+      { name: 'Fastify', color: '#000000', textColor: 'white' },
+      { name: 'React', color: '#61dafb', textColor: 'black' },
+      { name: 'Tailwind CSS', color: '#38bdf8', textColor: 'black' },
+      { name: 'PostgreSQL', color: '#336791', textColor: 'white' },
+      { name: 'Docker', color: '#2496ed', textColor: 'white' },
+      { name: 'Git', color: '#f05032', textColor: 'white' },
+      { name: 'GitHub', color: '#181717', textColor: 'white' },
+    ],
   },
 ];
 ---
