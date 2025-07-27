@@ -4,12 +4,13 @@ import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
 import AboutMe from '../components/sections/AboutMe.astro';
 import Experiences from '../components/sections/Experiences.astro';
+import Freelance from '../components/sections/Freelance.astro';
 import Projects from '../components/sections/Projects.astro';
 import Welcome from '../components/sections/Welcome.astro';
 import Footer from '../components/ui/Footer.astro';
 import Navbar from '../components/ui/Navbar.astro';
 import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
+import Contact from '../components/sections/Contact.astro';
 ---
 
 <Layout title='Mi Portfolio'>
@@ -18,17 +19,23 @@ import '../styles/global.css';
   >
     <Navbar />
     <div class='pt-16'>
-      <section>
+      <section id='welcome'>
         <Welcome />
       </section>
       <section id='experiencias'>
         <Experiences />
+      </section>
+      <section id='freelance'>
+        <Freelance />
       </section>
       <section id='proyectos'>
         <Projects />
       </section>
       <section id='about'>
         <AboutMe />
+      </section>
+      <section id='contact'>
+        <Contact />
       </section>
       <Footer />
     </div>
