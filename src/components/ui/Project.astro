@@ -4,6 +4,7 @@ interface Technology {
   icon?: string;
   color: string;
   textColor: string;
+  url: string;
 }
 
 interface Project {
@@ -55,12 +56,15 @@ const { project } = Astro.props;
             <p class='text-gray-400'>Tecnologías:</p>
             <div class='flex flex-wrap gap-2'>
               {project.technologies.map((technology) => (
-                <span
+                <a
+                  href={technology.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   style={`background-color: ${technology.color}; color: ${technology.textColor};`}
-                  class='rounded-full opacity-90 px-2 py-1 text-xs hover:opacity-80 transition cursor-default'
+                  class='rounded-full opacity-90 px-2 py-1 text-xs hover:opacity-100 transition cursor-pointer hover:scale-105'
                 >
                   {technology.name}
-                </span>
+                </a>
               ))}
             </div>
           </div>
