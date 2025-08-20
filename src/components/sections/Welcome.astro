@@ -64,18 +64,20 @@ function copyEmail() {
     <div class='flex gap-2 flex-wrap'>
       <a
         class='inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition bg-[#43d490]/60 border border-[#43d490]/90 rounded-full text-md hover:bg-[#43d490]/90 hover:border-[#43d490] group max-w-fit focus:outline-none focus-visible:ring focus-visible:ring-[#43d490]/30 focus-visible:ring-offset-2 shadow-lg'
-        href='mailto:diazxavier27@gmail.com'
+        id='emailButton'
+        style="cursor: pointer;"
       >
         <div class='flex items-center gap-2'>
           <i class='fa-regular fa-envelope w-4 h-4'></i>
-          <span class='font-medium'>Email</span>
+          <span class='font-medium'>Contacto</span>
         </div>
       </a>
       <button
-        class='p-2 rounded-full hover:bg-[#43d490]/40 transition-all duration-300'
+        class='p-2 rounded-full hover:bg-[#f6ea5d]/40 transition-all duration-300'
         onclick={copyEmail()}
       >
         <div class='flex items-center gap-2'>
+          <span class='font-medium'>Copiar email</span>
           <i class='fa-regular fa-copy w-4 h-4'></i>
         </div>
       </button>
@@ -106,3 +108,18 @@ function copyEmail() {
     </div>
   </div>
 </section>
+
+<script>
+  const emailButton = document.getElementById('emailButton');
+
+  emailButton.addEventListener('click', () => {
+    const href = '#contact';
+      if (href) {
+        document.querySelector(href)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        history.pushState(null, '', href);
+    }
+  });
+</script>
