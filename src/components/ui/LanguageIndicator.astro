@@ -7,7 +7,7 @@ const currentLang = getLangFromUrl(Astro.url);
 <div id="language-indicator" class="fixed top-4 right-4 z-[9998] pointer-events-none opacity-0 transition-opacity duration-300">
   <div class="flex items-center gap-2 bg-[#4b1e3d]/90 backdrop-blur-sm text-white px-3 py-2 rounded-full shadow-lg">
     <div class="w-2 h-2 bg-[#f6ea5d] rounded-full animate-pulse"></div>
-    <span class="text-sm font-medium">Cambiando idioma...</span>
+    <span class="text-sm font-medium">Idioma cambiado</span>
   </div>
 </div>
 
@@ -37,9 +37,7 @@ const currentLang = getLangFromUrl(Astro.url);
       const newLang = url.split('/')[1];
       if (newLang && newLang !== currentLang && (newLang === 'es' || newLang === 'en')) {
         currentLang = newLang;
-        
         showLanguageIndicator();
-        
         setTimeout(hideLanguageIndicator, 2000);
       }
     }

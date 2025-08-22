@@ -17,16 +17,9 @@ const currentLang = getLangFromUrl(Astro.url);
       const overlay = transition.querySelector('div');
       if (overlay) {
         overlay.classList.remove('translate-x-full');
-        
-        setTimeout(() => {
-        }, 350);
       }
     }
   }
-  
-  window.addEventListener('hashchange', () => {
-    triggerPageTransition();
-  });
   
   let lastUrl = location.href;
   new MutationObserver(() => {
