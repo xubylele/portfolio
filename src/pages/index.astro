@@ -1,5 +1,17 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
 import EsHome from './es/index.astro';
+import EnHome from './en/index.astro';
+
 export const prerender = true;
+
+const currentLang = getLangFromUrl(Astro.url);
+
+// If we're at the root and no language is specified, redirect to default language
+if (Astro.url.pathname === '/') {
+  const userLang = Astro.request.headers.get('accept-language')?.includes('en') ? 'en' : 'es';
+  return Astro.redirect(`/${userLang}`);
+}
 ---
-<EsHome />
+
+{currentLang === 'en' ? <EnHome /> : <EsHome />}
