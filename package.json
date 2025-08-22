@@ -12,6 +12,7 @@
     "@astrojs/check": "^0.9.4",
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.13.2",
     "typescript": "^5.8.3"
   },
