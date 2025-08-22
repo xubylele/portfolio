@@ -1,0 +1,65 @@
+---
+import { getLangFromUrl } from '../../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+---
+
+<div id="page-transition" class="fixed inset-0 z-[9999] pointer-events-none">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#4b1e3d] to-[#0e050b] transform translate-x-full transition-transform duration-700 ease-in-out"></div>
+</div>
+
+<script>
+  let currentLang = '${currentLang}';
+  
+  function triggerPageTransition() {
+    const transition = document.getElementById('page-transition');
+    if (transition) {
+      const overlay = transition.querySelector('div');
+      if (overlay) {
+        overlay.classList.remove('translate-x-full');
+        
+        setTimeout(() => {
+        }, 350);
+      }
+    }
+  }
+  
+  window.addEventListener('hashchange', () => {
+    triggerPageTransition();
+  });
+  
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const url = location.href;
+    if (url !== lastUrl) {
+      lastUrl = url;
+      const newLang = url.split('/')[1];
+      if (newLang && newLang !== currentLang && (newLang === 'es' || newLang === 'en')) {
+        currentLang = newLang;
+        triggerPageTransition();
+      }
+    }
+  }).observe(document, { subtree: true, childList: true });
+  
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const transition = document.getElementById('page-transition');
+      if (transition) {
+        const overlay = transition.querySelector('div');
+        if (overlay) {
+          overlay.classList.add('translate-x-full');
+        }
+      }
+    }, 100);
+  });
+</script>
+
+<style>
+  #page-transition {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #page-transition div {
+    will-change: transform;
+  }
+</style>

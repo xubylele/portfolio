@@ -1,6 +1,9 @@
 ---
 import '../../styles/global.css';
+import '../../styles/animations.css';
 import { useTranslations } from '../../i18n/utils';
+import PageTransition from '../../components/ui/PageTransition.astro';
+import LanguageIndicator from '../../components/ui/LanguageIndicator.astro';
 
 const t = useTranslations('en');
 ---
@@ -34,6 +37,8 @@ const t = useTranslations('en');
     <link rel="alternate" hreflang="es" href="https://dev.xuby.cl/es/" />
   </head>
   <body>
+    <PageTransition />
+    <LanguageIndicator />
     <slot />
   </body>
 </html>

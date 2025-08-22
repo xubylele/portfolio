@@ -1,0 +1,68 @@
+---
+import { getLangFromUrl } from '../../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+---
+
+<div id="language-indicator" class="fixed top-4 right-4 z-[9998] pointer-events-none opacity-0 transition-opacity duration-300">
+  <div class="flex items-center gap-2 bg-[#4b1e3d]/90 backdrop-blur-sm text-white px-3 py-2 rounded-full shadow-lg">
+    <div class="w-2 h-2 bg-[#f6ea5d] rounded-full animate-pulse"></div>
+    <span class="text-sm font-medium">Cambiando idioma...</span>
+  </div>
+</div>
+
+<script>
+  const indicator = document.getElementById('language-indicator');
+  let currentLang = '${currentLang}';
+  
+  function showLanguageIndicator() {
+    if (indicator) {
+      indicator.classList.remove('opacity-0');
+      indicator.classList.add('opacity-100');
+    }
+  }
+  
+  function hideLanguageIndicator() {
+    if (indicator) {
+      indicator.classList.remove('opacity-100');
+      indicator.classList.add('opacity-0');
+    }
+  }
+  
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const url = location.href;
+    if (url !== lastUrl) {
+      lastUrl = url;
+      const newLang = url.split('/')[1];
+      if (newLang && newLang !== currentLang && (newLang === 'es' || newLang === 'en')) {
+        currentLang = newLang;
+        
+        showLanguageIndicator();
+        
+        setTimeout(hideLanguageIndicator, 2000);
+      }
+    }
+  }).observe(document, { subtree: true, childList: true });
+  
+  window.addEventListener('load', () => {
+    setTimeout(hideLanguageIndicator, 1000);
+  });
+</script>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+</style>
