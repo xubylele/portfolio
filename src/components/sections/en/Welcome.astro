@@ -1,0 +1,124 @@
+---
+function copyEmail() {
+  return `
+   navigator.clipboard.writeText('diazxavier27@gmail.com');
+   const button = this;
+   button.classList.add('bg-[#43d490]/50');
+   const toast = document.createElement('div');
+   toast.className = 'fixed bottom-4 right-4 bg-[#43d490] text-white px-4 py-2 rounded-lg shadow-lg transform translate-y-0 opacity-100 transition-all duration-300';
+   toast.textContent = 'Email copied to clipboard!';
+   document.body.appendChild(toast);
+   setTimeout(() => {
+     button.classList.remove('bg-[#43d490]/50');
+     toast.classList.add('translate-y-full', 'opacity-0');
+     setTimeout(() => toast.remove(), 300);
+   }, 2000);
+ `;
+}
+---
+
+<section class='text-white p-4'>
+  <div class='mb-8'>
+    <div class='flex items-center gap-4'>
+      <img
+        src='/xuby.jpg'
+        alt='Profile'
+        class='w-24 h-24 md:w-20 md:h-20 rounded-full shadow-lg aspect-square object-cover'
+      />
+      <a
+        href='https://www.linkedin.com/in/xubylele/'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='inline-flex items-center justify-center gap-2 px-4 py-1 text-[#43d490] transition bg-[#43d490]/10 border border-[#43d490]/30 rounded-full text-md hover:bg-[#43d490]/20 hover:border-[#43d490]/50 group max-w-fit focus:outline-none focus-visible:ring focus-visible:ring-[#43d490]/30 focus-visible:ring-offset-2 transform hover:scale-105 duration-300 shadow-lg'
+      >
+        Available for work
+      </a>
+    </div>
+  </div>
+  <div class='mb-8'>
+    <h1 class='text-3xl md:text-4xl lg:text-5xl font-bold -ml-1'>
+      Hello, I'm <span class='text-[#f6ea5d]'>Xuby</span>
+    </h1>
+  </div>
+  <div class='mb-8'>
+    <div>
+      <span class='text-lg md:text-xl space-y-4 text-[#f6ea5d]/90'>
+        Software Engineer and Fullstack Developer.
+      </span>
+      <p class='leading-relaxed xl:w-3/5 lg:w-4/5 md:w-5/6 text-lg md:text-xl'>
+        <span class='text-lg md:text-xl space-y-4 text-white-300/90'
+          >With +5 years of experience, from Viña del Mar, Chile 🇨🇱.
+        </span>
+      </p>
+      <p
+        class='leading-relaxed xl:w-3/5 lg:w-4/5 md:w-5/6 text-lg md:text-xl mt-4'
+      >
+        <span class='text-lg md:text-xl space-y-4 text-white-300/90'
+          >Experienced in software development and web applications for any type of business.
+        </span>
+      </p>
+    </div>
+  </div>
+  <div class='mb-8'>
+    <div class='flex gap-2 flex-wrap'>
+      <a
+        class='inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition bg-[#43d490]/60 border border-[#43d490]/90 rounded-full text-md hover:bg-[#43d490]/90 hover:border-[#43d490] group max-w-fit focus:outline-none focus-visible:ring focus-visible:ring-[#43d490]/30 focus-visible:ring-offset-2 shadow-lg'
+        id='emailButton'
+        style="cursor: pointer;"
+      >
+        <div class='flex items-center gap-2'>
+          <i class='fa-regular fa-envelope w-4 h-4'></i>
+          <span class='font-medium'>Contact</span>
+        </div>
+      </a>
+      <button
+        class='p-2 rounded-full hover:bg-[#f6ea5d]/40 transition-all duration-300'
+        onclick={copyEmail()}
+      >
+        <div class='flex items-center gap-2'>
+          <span class='font-medium'>Copy email</span>
+          <i class='fa-regular fa-copy w-4 h-4'></i>
+        </div>
+      </button>
+    </div>
+    <div class='flex gap-2 mt-4'>
+      <a
+        href='https://www.linkedin.com/in/xubylele/'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition bg-[#4390d4]/60 border border-[#4390d4]/90 rounded-full text-md hover:bg-[#4390d4]/90 hover:border-[#4390d4] group max-w-fit focus:outline-none focus-visible:ring focus-visible:ring-[#4390d4]/30 focus-visible:ring-offset-2 shadow-lg'
+      >
+        <div class='flex items-center gap-2'>
+          <i class='fa-brands fa-linkedin w-4 h-4'></i>
+          LinkedIn
+        </div>
+      </a>
+      <a
+        href='https://github.com/xubylele'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition bg-[#24292e]/60 border border-[#24292e]/90 rounded-full text-md hover:bg-[#24292e]/90 hover:border-[#24292e] group max-w-fit focus:outline-none focus-visible:ring focus-visible:ring-[#24292e]/30 focus-visible:ring-offset-2 shadow-lg'
+      >
+        <div class='flex items-center gap-2'>
+          <i class='fa-brands fa-github w-4 h-4'></i>
+          GitHub
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const emailButton = document.getElementById('emailButton');
+
+  emailButton.addEventListener('click', () => {
+    const href = '#contact';
+      if (href) {
+        document.querySelector(href)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        history.pushState(null, '', href);
+    }
+  });
+</script>

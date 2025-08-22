@@ -1,5 +1,8 @@
 ---
-import '../styles/global.css';
+import '../../styles/global.css';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
 ---
 
 <!doctype html>
@@ -9,7 +12,7 @@ import '../styles/global.css';
     <meta name='viewport' content='width=device-width' />
     <meta
       name='description'
-      content='Xuby es un desarrollador fullstack con +5 años de experiencia. Disponible para proyectos freelance y desarrollo de software a medida.'
+      content='Xuby is a fullstack developer with +5 years of experience. Available for freelance projects and custom software development.'
     />
     <link rel='icon' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
@@ -26,7 +29,9 @@ import '../styles/global.css';
       href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap'
       rel='stylesheet'
     />
-    <title>Desarrollador Fullstack | Freelancer en Chile | Xavier Díaz</title>
+    <title>Fullstack Developer | Freelancer in Chile | Xavier Díaz</title>
+    <link rel="alternate" hreflang="en" href="https://dev.xuby.cl/en/" />
+    <link rel="alternate" hreflang="es" href="https://dev.xuby.cl/es/" />
   </head>
   <body>
     <slot />

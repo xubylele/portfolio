@@ -1,17 +1,9 @@
-<footer class='ml-4 text-white/80 pt-8 pb-16 text-sm'>
-  <p>© 2024 Xuby, Derechos Reservados</p>
-  <p>Hecho con Astro y TailwindCSS</p>
-  <p class='text-xs'>
-    Inspirado en <a
-      href='https://porfolio.dev/'
-      class='text-[#f6ea5d] hover:text-[#f6ea5d] transition-colors'
-      target='_blank'
-      rel='noopener noreferrer'>Portfolio.dev</a
-    > obra de <a
-      href='https://www.twitch.tv/midudev'
-      class='text-[#f6ea5d] hover:text-[#f6ea5d] transition-colors'
-      target='_blank'
-      rel='noopener noreferrer'>midudev</a
-    >
-  </p>
-</footer>
+---
+import { getLangFromUrl } from '../../i18n/utils';
+import FooterES from './es/Footer.astro';
+import FooterEN from './en/Footer.astro';
+
+const currentLang = getLangFromUrl(Astro.url);
+---
+
+{currentLang === 'es' ? <FooterES /> : <FooterEN />}

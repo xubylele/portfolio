@@ -1,0 +1,100 @@
+---
+import Project from '../../ui/Project.astro';
+
+const technologyLinks = {
+  'JavaScript': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  'Node.js': 'https://nodejs.org/',
+  'Express.js': 'https://expressjs.com/',
+  'Oracle Database': 'https://www.oracle.com/database/',
+  'Docker': 'https://www.docker.com/',
+  'Git': 'https://git-scm.com/',
+  'GitHub': 'https://github.com/',
+  'MongoDB': 'https://www.mongodb.com/',
+  'Azure': 'https://azure.microsoft.com/',
+  'IoT': 'https://azure.microsoft.com/en-us/solutions/iot/',
+  'Python': 'https://www.python.org/',
+  'Flask': 'https://flask.palletsprojects.com/',
+  'Jinja2': 'https://jinja.palletsprojects.com/',
+  'PostgreSQL': 'https://www.postgresql.org/',
+  'Typescript': 'https://www.typescriptlang.org/',
+  'React': 'https://react.dev/',
+  'Ant Design': 'https://ant.design/',
+  'AWS': 'https://aws.amazon.com/',
+  'Fastify': 'https://www.fastify.io/',
+  'Tailwind CSS': 'https://tailwindcss.com/',
+  'HTML': 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  'CSS': 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  'VSCode API': 'https://code.visualstudio.com/api',
+};
+
+const projects = [
+  {
+    title: 'Reports Server - CMT Salud',
+    description:
+      'A REST API server that allows generating dynamic reports in PDF format. The report content can be customized through the Jinja2 interpreter, allowing the creation of new dynamic reports on demand.',
+    technologies: [
+      { name: 'Python', color: '#ffde57', textColor: 'black', url: technologyLinks['Python'] },
+      { name: 'Flask', color: '#f6ea5d', textColor: 'black', url: technologyLinks['Flask'] },
+      { name: 'Jinja2', color: '#f6ea5d', textColor: 'black', url: technologyLinks['Jinja2'] },
+      { name: 'HTML', color: '#e34c26', textColor: 'white', url: technologyLinks['HTML'] },
+      { name: 'CSS', color: '#264de4', textColor: 'white', url: technologyLinks['CSS'] },
+    ],
+    image: 'https://i.imgur.com/o42zI2C.png',
+  },
+  {
+    title: 'SAGE - CMT Salud',
+    description:
+      'Internal management system for CMT Salud company. Allows managing patient reservations, patient care, billing and user management, among others.',
+    technologies: [
+      { name: 'Javascript', color: '#f0db4f', textColor: 'black', url: technologyLinks['JavaScript'] },
+      { name: 'Typescript', color: '#007acc', textColor: 'white', url: technologyLinks['Typescript'] },
+      { name: 'Node.js', color: '#68a063', textColor: 'white', url: technologyLinks['Node.js'] },
+      { name: 'ExpressJS', color: '#000000', textColor: 'white', url: technologyLinks['Express.js'] },
+      { name: 'React', color: '#61dafb', textColor: 'black', url: technologyLinks['React'] },
+      { name: 'Ant Design', color: '#0170fe', textColor: 'white', url: technologyLinks['Ant Design'] },
+      { name: 'PostgreSQL', color: '#336791', textColor: 'white', url: technologyLinks['PostgreSQL'] },
+    ],
+    image: 'https://i.imgur.com/R0Dusbs.png',
+  },
+  {
+    title: 'Jinja2 HTML Enhancer for VSCode',
+    description:
+      'Extension for Visual Studio Code that improves the development experience of HTML templates with Jinja2. Adds support for syntax highlighting and visual validation of used variables.',
+    url: 'https://github.com/xubylele/jinja2-html-enhancer',
+    technologies: [
+      { name: 'VSCode API', color: '#007acc', textColor: 'white', url: technologyLinks['VSCode API'] },
+      { name: 'Typescript', color: '#007acc', textColor: 'white', url: technologyLinks['Typescript'] },
+      { name: 'Javascript', color: '#f0db4f', textColor: 'black', url: technologyLinks['JavaScript'] },
+      { name: 'HTML', color: '#e34c26', textColor: 'white', url: technologyLinks['HTML'] },
+      { name: 'CSS', color: '#264de4', textColor: 'white', url: technologyLinks['CSS'] },
+    ],
+    image: 'https://i.imgur.com/iNGNdrC.png',
+  },
+  {
+    title: 'Base64 converter for VSCode',
+    description:
+      'Extension for Visual Studio Code that allows converting text to base64 and vice versa.',
+    url: 'https://github.com/xubylele/base64-converter',
+    technologies: [
+      { name: 'VSCode API', color: '#007acc', textColor: 'white', url: technologyLinks['VSCode API'] },
+      { name: 'Typescript', color: '#007acc', textColor: 'white', url: technologyLinks['Typescript'] },
+      { name: 'Javascript', color: '#f0db4f', textColor: 'black', url: technologyLinks['JavaScript'] },
+      { name: 'HTML', color: '#e34c26', textColor: 'white', url: technologyLinks['HTML'] },
+      { name: 'CSS', color: '#264de4', textColor: 'white', url: technologyLinks['CSS'] },
+    ],
+    image: 'https://i.imgur.com/hl2ZMOF.gif',
+  },
+];
+---
+
+<section class='text-white p-4'>
+  <section class='mt-8 mb-8'>
+    <div class='flex items-center gap-4 text-3xl'>
+      <i class='fa-solid fa-code w-9 h-8'></i>
+      <h1 class='font-bold'>Projects</h1>
+    </div>
+  </section>
+  <section class='mb-8'>
+    {projects.map((project) => <Project project={project} />)}
+  </section>
+</section>

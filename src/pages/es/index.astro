@@ -1,0 +1,43 @@
+---
+import '@fortawesome/fontawesome-free/css/brands.min.css';
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import '@fortawesome/fontawesome-free/css/solid.min.css';
+import AboutMe from '../../components/sections/AboutMe.astro';
+import Experiences from '../../components/sections/Experiences.astro';
+import Freelance from '../../components/sections/Freelance.astro';
+import Projects from '../../components/sections/Projects.astro';
+import Welcome from '../../components/sections/Welcome.astro';
+import Footer from '../../components/ui/Footer.astro';
+import Navbar from '../../components/ui/Navbar.astro';
+import Layout from '../../layouts/es/Layout.astro';
+import Contact from '../../components/sections/Contact.astro';
+---
+
+<Layout title='Mi Portfolio'>
+  <div
+    class='min-h-screen bg-gradient-to-b from-[#4b1e3d] to-[#0e050b] text-white p-4 lg:px-40 md:px-20 sm:px-10 xs:px-4'
+  >
+    <Navbar />
+    <div class='pt-16'>
+      <section id='welcome'>
+        <Welcome />
+      </section>
+      <section id='experiencias'>
+        <Experiences />
+      </section>
+      <section id='freelance'>
+        <Freelance />
+      </section>
+      <section id='proyectos'>
+        <Projects />
+      </section>
+      <section id='about'>
+        <AboutMe />
+      </section>
+      <section id='contact'>
+        <Contact />
+      </section>
+      <Footer />
+    </div>
+  </div>
+</Layout>

@@ -8,4 +8,8 @@ export default defineConfig({
   },
   site: 'https://dev.xuby.cl',
   base: '/',
+  trailingSlash: 'never',
+  build: {
+    format: 'file'
+  }
 });
