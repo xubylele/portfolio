@@ -1,3 +1,5 @@
 ---
-return Astro.redirect('/es');
+import EsHome from './es/index.astro';
+export const prerender = true;
 ---
+<EsHome />
