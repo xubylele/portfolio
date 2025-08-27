@@ -12,7 +12,7 @@ This portfolio site now supports multiple languages with a clean URL structure a
 
 ## File Structure
 
-```
+```json
 src/
 ├── i18n/
 │   ├── ui.ts          # Translation strings
@@ -32,6 +32,7 @@ src/
 ## Adding New Languages
 
 1. **Add language to `src/i18n/ui.ts`**:
+
 ```typescript
 export const languages = {
   es: 'Español',
@@ -47,16 +48,19 @@ export const languages = {
 ## Adding New Translations
 
 1. **Add key to Spanish translations**:
+
 ```typescript
 'nav.newitem': 'Nuevo Elemento',
 ```
 
 2. **Add key to English translations**:
+
 ```typescript
 'nav.newitem': 'New Item',
 ```
 
 3. **Use in components**:
+
 ```astro
 ---
 import { useTranslations, getLangFromUrl } from '../../i18n/utils';
@@ -83,6 +87,7 @@ const t = useTranslations(currentLang);
 ## Language Detection
 
 The system automatically detects the current language from the URL and provides:
+
 - Correct `lang` attribute on HTML
 - Proper meta descriptions
 - Language-specific titles

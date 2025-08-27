@@ -8,7 +8,7 @@ const t = useTranslations(currentLang);
 const menuItems = [
   {
     label: t('nav.experience'),
-    href: '#experiencias',
+    href: '#experiences',
   },
   {
     label: t('nav.freelance'),
@@ -16,7 +16,7 @@ const menuItems = [
   },
   {
     label: t('nav.projects'),
-    href: '#proyectos',
+    href: '#projects',
   },
   {
     label: t('nav.about'),
@@ -57,13 +57,14 @@ const menuItems = [
           </li>
         ))
       }
-      <li class="md:hidden">
-        <LanguageSelector />
-      </li>
     </ul>
     
     <div class="hidden md:block">
-      <LanguageSelector />
+      <LanguageSelector id="language-selector-desktop" />
+    </div>
+    
+    <div class="md:hidden">
+      <LanguageSelector id="language-selector-mobile" />
     </div>
   </div>
 </nav>
