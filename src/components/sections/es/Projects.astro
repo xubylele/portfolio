@@ -25,9 +25,26 @@ const technologyLinks = {
   'HTML': 'https://developer.mozilla.org/en-US/docs/Web/HTML',
   'CSS': 'https://developer.mozilla.org/en-US/docs/Web/CSS',
   'VSCode API': 'https://code.visualstudio.com/api',
+  'Next.js': 'https://nextjs.org/',
+  'Vitest': 'https://vitest.dev/',
 };
 
 const projects = [
+  {
+    title: 'Schema Forge',
+    description:
+      'Ecosistema para gestión de esquemas de base de datos con DSL declarativo .sf y generación automática de migraciones SQL para Postgres/Supabase. Incluye: CLI y API programática (schema-forge), motor central determinista (schema-forge-core), extensión para VS Code (schema-forge-vscode), acción de GitHub para CI (schema-forge-action), sitio oficial con documentación y playground (schema-forge-site) y backend de auth y APIs cloud (schema-forge-cloud). En vivo: schemaforge.xuby.cl.',
+    url: 'https://schemaforge.xuby.cl',
+    technologies: [
+      { name: 'Typescript', color: '#3178c6', textColor: 'white', url: technologyLinks['Typescript'] },
+      { name: 'Node.js', color: '#68a063', textColor: 'white', url: technologyLinks['Node.js'] },
+      { name: 'PostgreSQL', color: '#336791', textColor: 'white', url: technologyLinks['PostgreSQL'] },
+      { name: 'Next.js', color: '#000000', textColor: 'white', url: technologyLinks['Next.js'] },
+      { name: 'VSCode API', color: '#007acc', textColor: 'white', url: technologyLinks['VSCode API'] },
+      { name: 'GitHub', color: '#24292e', textColor: 'white', url: technologyLinks['GitHub'] },
+    ],
+    image: 'https://i.imgur.com/E0rI9on.png',
+  },
   {
     title: 'Reports Server - CMT Salud',
     description:
