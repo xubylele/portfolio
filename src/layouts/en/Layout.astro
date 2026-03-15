@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro'
+import SpeedInsights from "@vercel/speed-insights/astro"
 import LanguageIndicator from '../../components/ui/LanguageIndicator.astro';
 import PageTransition from '../../components/ui/PageTransition.astro';
 import { useTranslations } from '../../i18n/utils';
@@ -37,6 +38,7 @@ const t = useTranslations('en');
     <link rel="alternate" hreflang="en" href="https://dev.xuby.cl/en/" />
     <link rel="alternate" hreflang="es" href="https://dev.xuby.cl/es/" />
     <Analytics />
+    <SpeedInsights />
   </head>
   <body>
     <PageTransition />
