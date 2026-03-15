@@ -1,6 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro';
-import SpeedInsights from "@vercel/speed-insights/astro"
+import SpeedInsights from "@vercel/speed-insights/astro";
 import LanguageIndicator from '../../components/ui/LanguageIndicator.astro';
 import PageTransition from '../../components/ui/PageTransition.astro';
 import { useTranslations } from '../../i18n/utils';
@@ -8,33 +8,68 @@ import '../../styles/animations.css';
 import '../../styles/global.css';
 
 const t = useTranslations('es');
+const site = 'https://dev.xuby.cl';
+const canonical = new URL(Astro.url.pathname, site).href;
+const title = 'Desarrollador Fullstack | Freelancer en Chile | Xavier Díaz';
+const description = 'Xuby es un desarrollador fullstack con +5 años de experiencia. Disponible para proyectos freelance y desarrollo de software a medida.';
+const ogImage = `${site}/logo.png`;
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${site}/#person`,
+  name: 'Xavier Díaz',
+  alternateName: 'Xuby',
+  url: site,
+  jobTitle: 'Desarrollador Fullstack',
+  image: `${site}/logo.png`,
+  sameAs: ['https://github.com/xubylele', 'https://www.linkedin.com/in/xubylele/'],
+  knowsAbout: ['TypeScript', 'JavaScript', 'Python', 'React', 'Astro', 'Node.js', 'PostgreSQL'],
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Xuby - Desarrollador Fullstack',
+  url: site,
+  publisher: { '@id': `${site}/#person` },
+  inLanguage: ['en', 'es'],
+};
 ---
 
 <!doctype html>
-<html lang='es'>
+<html lang="es">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta
-      name='description'
-      content='Xuby es un desarrollador fullstack con +5 años de experiencia. Disponible para proyectos freelance y desarrollo de software a medida.'
-    />
-    <link rel='icon' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <script type='application/ld+json'>
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Xuby",
-        "url": "https://dev.xuby.cl",
-        "logo": "https://dev.xuby.cl/logo.png"
-      }
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#4b1e3d" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es" />
+    <meta property="og:site_name" content="Xuby" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
     <link
-      href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap'
-      rel='stylesheet'
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
-    <title>Desarrollador Fullstack | Freelancer en Chile | Xavier Díaz</title>
+    <title>{title}</title>
+    <link rel="alternate" hreflang="x-default" href="https://dev.xuby.cl/es/" />
     <link rel="alternate" hreflang="en" href="https://dev.xuby.cl/en/" />
     <link rel="alternate" hreflang="es" href="https://dev.xuby.cl/es/" />
     <Analytics />
